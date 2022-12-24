@@ -12,8 +12,6 @@ func queryParamDisplayHandler(res http.ResponseWriter, req *http.Request) {
 	res.WriteHeader(200)
 	res.Header().Set("Content-Type", "application/json")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
-	print(req.FormValue("q"))
-
 	io.WriteString(res, getshit(req.FormValue("q")))
 
 }
