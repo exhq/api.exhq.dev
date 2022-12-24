@@ -1,11 +1,15 @@
-from flask import Flask
-app = Flask(__name__)
+from bs4 import BeautifulSoup
+import flask
+app = flask.Flask(__name__)
 
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
-    return 'You want path: %s' % path
+    if bool(BeautifulSoup(path, "html.parser").find()):
+        return "kill yourself"
+    else:
+        return path
 
 
 if __name__ == '__main__':
