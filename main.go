@@ -29,5 +29,5 @@ func main() {
 	http.HandleFunc("/youtuber", func(res http.ResponseWriter, req *http.Request) {
 		queryParamDisplayHandler(res, req)
 	})
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":5000", nil))
 }
