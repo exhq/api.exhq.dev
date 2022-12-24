@@ -14,8 +14,11 @@ def catch_all(path):
         strpath = str(path).split("/")
         if len(path) == 0:
             return "ill add a api list at some point lol"
-        if path[0] == "youtuber":
+        if strpath[0] == "youtuber":
             x = youtuber(str(path).replace("youtuber/", ""))
+            print(len(strpath))
+            if len(strpath) < 2 or strpath[1] == "":
+                return flask.redirect('https://www.youtube.com/watch?v=YonS9_QJbp8')
             return x
         else:
             return "unknown api: " + path[0]
