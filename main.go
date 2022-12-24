@@ -19,8 +19,8 @@ func queryParamDisplayHandler(res http.ResponseWriter, req *http.Request) {
 
 var myClient = &http.Client{Timeout: 10 * time.Second}
 
-func getshit(x string) string {
-	url := x
+func getshit(url string) string {
+	url = "https://api.song.link/v1-alpha.1/links?url=" + url
 	resp, err := http.Get(url)
 	// handle the error if there is one
 	if err != nil {
@@ -34,6 +34,7 @@ func getshit(x string) string {
 		panic(err)
 	}
 	// show the HTML code as a string %s
+	print
 	return string(html)
 }
 
