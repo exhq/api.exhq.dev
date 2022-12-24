@@ -34,7 +34,6 @@ func getshit(url string) string {
 		panic(err)
 	}
 	// show the HTML code as a string %s
-	print
 	return string(html)
 }
 
