@@ -3,6 +3,7 @@ package main
 import (
 	"io"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"time"
 )
@@ -37,8 +38,8 @@ func getshit(x string) string {
 }
 
 func main() {
-	//http.HandleFunc("/youtuber", func(res http.ResponseWriter, req *http.Request) {
-	//	queryParamDisplayHandler(res, req)
-	//})
-	//log.Fatal(http.ListenAndServe(":5000", nil))
+	http.HandleFunc("/youtuber", func(res http.ResponseWriter, req *http.Request) {
+		queryParamDisplayHandler(res, req)
+	})
+	log.Fatal(http.ListenAndServe(":5000", nil))
 }
