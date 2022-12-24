@@ -20,9 +20,8 @@ func queryParamDisplayHandler(res http.ResponseWriter, req *http.Request) {
 var myClient = &http.Client{Timeout: 10 * time.Second}
 
 func getshit(url string) string {
-	url = "https://api.song.link/v1-alpha.1/links?url=" + url
-	resp, err := http.Get(url)
-	// handle the error if there is one
+	gaming := "https://api.song.link/v1-alpha.1/links?url=" + url
+	resp, err := http.Get(gaming)
 	if err != nil {
 		panic(err)
 	}
